@@ -20,7 +20,7 @@ public class CDReader {
     public List<Cd> getAllCds(String filename) {
         List<Cd> cdsList = new ArrayList<>();
         InputStream input = this.getClass().getClassLoader().getResourceAsStream(filename);
-        assert input != null;
+
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
             String line;
