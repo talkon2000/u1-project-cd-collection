@@ -17,7 +17,7 @@ public class CDReader {
      * @return a new list of every created Cd object
      * @throws IOException if the file is not found
      */
-    public List<Cd> getAllCds(String filename) throws IOException {
+    public List<Cd> getAllCds(String filename) {
         InputStream input = this.getClass().getClassLoader().getResourceAsStream(filename);
         assert input != null;
         BufferedReader reader = new BufferedReader(new InputStreamReader(input));
