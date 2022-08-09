@@ -1,7 +1,6 @@
 import Types.Cd;
 import Types.CdCollection;
 
-import java.io.IOException;
 import java.util.List;
 
 public class CDDriver {
