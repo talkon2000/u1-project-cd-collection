@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Assignment2Test {
 
-    private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
     @BeforeEach
