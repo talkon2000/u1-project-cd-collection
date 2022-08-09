@@ -1,5 +1,3 @@
-import org.junit.Rule;
-import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,8 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Assignment2Test {
 
-    /*@Rule
-    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();*/
     private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
