@@ -2,13 +2,13 @@ package Types;
 
 public class Cd {
 
-    public String title;
-    public String artist;
-    public int year;
-    public int rating;
-    public int numOfSongs;
-    public Song[] songs;
-    public int index;
+    private String title;
+    private String artist;
+    private int year;
+    private int rating;
+    private int numOfSongs;
+    private Song[] songs;
+    private int index;
 
     /**
      * Constructs a new Cd object with the following fields
@@ -56,5 +56,29 @@ public class Cd {
             result += song + "\n";
         }
         return result.trim();
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public int getNumOfSongs() {
+        return numOfSongs;
+    }
+
+    public Song[] getSongs() {
+        return songs.clone();
     }
 }
