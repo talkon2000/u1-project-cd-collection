@@ -9,6 +9,10 @@ public class CDDriver {
         String filename = "cds_short.txt";
         CDReader cdReader = new CDReader();
         List<Cd> cdsList = cdReader.getAllCds(filename);
+        if (cdsList == null) {
+            System.out.println("Exiting...");
+            return;
+        }
 
         CdCollection collection = new CdCollection();
         for (Cd cd : cdsList) {
