@@ -1,8 +1,8 @@
 package Types;
 
 public class Song {
-    public String title;
-    public String length;
+    private String title;
+    private String length;
 
     /**
      * Constructs a new Song object with the following fields:
@@ -29,5 +29,13 @@ public class Song {
     @Override
     public String toString() {
         return String.format("%s; %s", title, length);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getLength() {
+        return length;
     }
 }

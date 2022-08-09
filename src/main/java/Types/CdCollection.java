@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CdCollection {
-    public List<Cd> cds;
+    private List<Cd> cds;
 
     /**
      * Constructor for CdCollection. This object should hold all CDs in the collection.
@@ -47,7 +47,7 @@ public class CdCollection {
     public CdCollection findCdsByArtist(String artist) {
         CdCollection searchResults = new CdCollection();
         for (Cd cd : cds) {
-            if (cd.artist.equals(artist)) {
+            if (cd.getArtist().equals(artist)) {
                 searchResults.addCD(cd);
             }
         }
@@ -63,12 +63,16 @@ public class CdCollection {
     public List<Song> findSongsByTitle(String title) {
         List<Song> searchResults = new ArrayList<>();
         for (Cd cd : cds) {
-            for (Song song : cd.songs) {
-                if (song.title.equals(title)) {
+            for (Song song : cd.getSongs()) {
+                if (song.getTitle().equals(title)) {
                     searchResults.add(song);
                 }
             }
         }
         return searchResults;
+    }
+
+    public List<Cd> getCds() {
+        return new ArrayList<Cd>(cds);
     }
 }
