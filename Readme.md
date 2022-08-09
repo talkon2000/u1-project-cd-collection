@@ -27,8 +27,24 @@ Your job is to:
 * Write unit tests (these should initially fail) that isolate the bug.
 * Fix the bug.
 * Make sure all unit tests are passing, including the ones that you wrote.
-####
-    Steps to reproduce: 'x'
+#### Steps to reproduce:
+1. Navigate to the CDDriver.java class
+2. Try to run the main method
+3. You should see an error message:
+
+    ```"error: unreported exception IOException; must be caught or declared to be thrown"```
+
+As is the case for most programming problems, there are multiple ways to fix this.
+You could add a "throws" declaration, or you could surround the troublesome code with a try/catch statement.
+
+For this case, we would like you to use a try/catch.
+You can find documentation for that below.
+
+[Try](https://docs.oracle.com/javase/tutorial/essential/exceptions/try.html)
+
+[Catch](https://docs.oracle.com/javase/tutorial/essential/exceptions/catch.html)
+
+[An example](https://www.baeldung.com/java-exceptions#2-try-catch)
 
 ## Assignment 3: Complete the body of the methods in your classes
 #### ** This assignment should be started after assignment 2, but you may be unable to finish it until later
