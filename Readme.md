@@ -35,7 +35,30 @@ Your job is to:
 In this assignment, you will be completing the methods found in your classes.
 We have given you the method declarations, but it is your job to implement the logic of each.
 
+Take a look at the ```cds_short.txt``` file to see how you need to parse the input.
+
+Your display methods should output in the following format:
+
+    Artist: <artist>
+    Title: <title>
+    Release year: <year>
+    Rating: <rating>
+    Songs:
+    <Song #1 title>; <Song #1 length>
+    <Song #2 title>; <Song #2 length>
+    ...
+    <new line>
+    Artist: <artist>
+    ...
+
 If you need help with a method, a good place to start is looking at the documentation for it.
+
+Try to work on these in sections. 
+For instance, finish and test the Song class before you move on to the CD class.
+Remember that you don't necessarily need to parse the input to test these classes.
+You can create them on your own like so:
+    
+    Song test = new Song(title, length);
 
 Feel free to work with others on this assignment.
 
@@ -85,7 +108,10 @@ These challenges are optional!!
 If you finish with time to spare, feel free to try your hand at these more advanced topics.
 They can be completed in any order you see fit.
 
-Most, if not all, of these challenges will require you to write your own unit tests.
+Most, if not all, of these challenges will require you to write your own unit tests, and look things up on your own. 
+An important aspect of these challenges is being able to find the answers to your questions on your own 
+(but don't be afraid to ask the instructors for help if you can't find what you're looking for!).
+
 ## Challenge 1: Accept a filename as an argument
 In this challenge, you will change the way your program gets the filename of your cds list.
 Originally, the name was hard-coded in to the program, but that doesn't allow for much flexibility.
@@ -101,15 +127,55 @@ Now that you know vaguely how it works, it is your job to figure out how to do i
 This challenge doesn't have much guidance.
 If you need to know more, you'll have to do some digging!
 The internet will always be a great and vast resource for you, and now is a great time to start using it.
+
 ## Challenge 2: Sort using a comparator
 In this challenge, you will use a comparator to sort your collection, rather than the comparable interface.
 You have noticed that there are more ways you could sort the CDs than just by year.
 Perhaps you wanted to sort them alphabetically by artist? Or by number of songs?
 Or by the total length of the CD (sum of the length of all the songs).
 
-Your job is to make one or more comparators that you can use to sort
+Your job is to make one or more comparators that you can use to sort your collection in different ways.
+Make sure you name your comparators descriptively by what they are sorting, and how they are sorting it.
+
 ## Challenge 3: Output to a file instead of console
+In this challenge, you will make it *optional* to output your collections into a new ```collection.txt``` file.
+You will need to ask the user if they want to write to the file or not.
+
+This should change your ```display*``` method(s).
 
 ## Challenge 4: Build a UI that a user can use to navigate all features of the program
+In this challenge, your goal is to increase the quality of the user experience.
+Instead of just running the program and getting some output, this should allow the user to choose how they want to use the program.
+
+For example, it might look like this:
+
+    Welcome to the CD Collection sorter!
+    What would you like to do?
+    1) Sort your CD collection by year
+
+This can be used to great effect after you have completed the other challenges, like so:
+
+    What would you like to do?
+    1) Sort your CD collection by year
+    2) Sort your CD collection by artist
+    3) Change your output type (console vs write to file)
+    4) Change your pagination preferences
+
+The way this menu looks and works is completely up to you.
+Again, there is no right way to do this, as long as it provides a good user experience, and is bug-free.
+Don't forget your unit tests!
 
 ## Challenge 5: Paginate console output
+In this challenge, you will be paginating your output.
+You may have already done this as a challenge in the Gutenberg project in Unit 0, but practice makes perfect.
+
+If you don't know, pagination is the practice of turning a giant, unwieldy block of text into more readable pages.
+It will be up to you to decide how to paginate your output.
+
+Should it be a certain number of lines? 
+A certain number of albums? 
+A combination of both?
+
+What other features should your pagination have?
+A user should be able to move through the pages by entering '<' and '>', or a page number,
+but the rest is up to you to decide on your design.
