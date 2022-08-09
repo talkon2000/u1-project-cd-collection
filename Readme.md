@@ -77,17 +77,17 @@ This may change the way you are accessing information from other classes, and it
 ## Assignment 5: Change to lists
 #### ** This assignment should be done after 'Big O Polynomial, Lists'
 Now that we have learned about Big O and the efficiency of lists, let's put it into practice.
-Right now, we are using arrays to store our CDs in our collection, and our Songs in our CDs.
-In this assignment, you will change those arrays to lists.
+Right now, we are using arrays to store Songs in our CDs.
+In this assignment, you will change that array to a list.
 
 Think about what needs to change in order for this implementation to work.
 Do we need anything extra that we didn't have before? 
 Do we have extra code that is no longer needed?
 
-After you finish changing your arrays to lists, ensure that the unit tests for this assignment are passing.
+After you finish changing your array to a list, ensure that the unit tests for this assignment are passing.
 
 Then, answer these questions:
-* What methods in each class use these lists?
+* What methods in each class use lists?
 * What is the Big O runtime complexity of each of those methods?
 * What is the Big O space complexity of each of those methods?
 
