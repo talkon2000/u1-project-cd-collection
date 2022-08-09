@@ -1,15 +1,20 @@
-import org.junit.Rule;
-import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Assignment2Test {
 
-    @Rule
-    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
+    private final PrintStream standardOut = System.out;
+    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
+    @BeforeEach
+    public void setUp() {
+        System.setOut(new PrintStream(outputStreamCaptor));
+    }
 
     @Test
     public void programCompiles() {
@@ -20,18 +25,19 @@ public class Assignment2Test {
     public void cdReader_reachesEndOfFile() {
         CDReader reader = new CDReader();
         reader.getAllCds("cds_short.txt");
-        assertEquals("Reached end of file\n",systemOutRule.getLogWithNormalizedLineSeparator());
+        assertEquals("Reached end of file",outputStreamCaptor.toString().trim());
     }
 
     @Test
-    public void cdReader_doesNotThrowException() {
+    public void cdReader_doesNotThrowException_returnsNull() {
         CDReader reader = new CDReader();
-        assertDoesNotThrow((Executable) reader.getAllCds("cds_short.tx"));
+        assertNull(reader.getAllCds("cds_short.tx"));
     }
 
     @Test
     public void cdReader_outputsMessageInsteadOfExiting() {
         CDReader reader = new CDReader();
-        assertFalse(systemOutRule.getLog().isEmpty());
+        reader.getAllCds("cds_short.tx");
+        assertFalse(outputStreamCaptor.toString().isEmpty());
     }
 }
