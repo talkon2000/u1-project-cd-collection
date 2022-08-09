@@ -26,12 +26,13 @@ public class Assignment2Test {
     @Test
     public void cdReader_doesNotThrowException() {
         CDReader reader = new CDReader();
-        assertDoesNotThrow((Executable) reader.getAllCds("cds_short.tx"));
+        reader.getAllCds("cds_short.tx");
     }
 
     @Test
     public void cdReader_outputsMessageInsteadOfExiting() {
         CDReader reader = new CDReader();
+        assertNull(reader.getAllCds("cds_short.tx"));
         assertFalse(systemOutRule.getLog().isEmpty());
     }
 }
