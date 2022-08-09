@@ -10,7 +10,8 @@ public class Song {
      * @param length: length of song
      */
     public Song(String title, String length) {
-        //TODO: implement
+        this.title = title;
+        this.length = length;
     }
 
     /**
@@ -18,7 +19,7 @@ public class Song {
      * Makes use of the toString() method
      */
     public void displaySong() {
-        //TODO: implement
+        System.out.println(this);
     }
 
     /**
@@ -27,7 +28,6 @@ public class Song {
      */
     @Override
     public String toString() {
-        //TODO: implement
-        return null;
+        return String.format("%s; %s", title, length);
     }
 }

@@ -16,7 +16,7 @@ public class CDDriver {
 
         CdCollection collection = new CdCollection();
         for (Cd cd : cdsList) {
-            //TODO: add each cd to the collection
+            collection.addCD(cd);
         }
     }
 }
