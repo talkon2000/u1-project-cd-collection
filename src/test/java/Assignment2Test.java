@@ -23,7 +23,7 @@ public class Assignment2Test {
     }
 
     @Test
-    public void cdReader_doesNotThrowException() {
+    public void cdReader_doesNotThrowException_returnsNull() {
         CDReader reader = new CDReader();
         assertNull(reader.getAllCds("cds_short.tx"));
     }
