@@ -19,7 +19,6 @@ public class CDReader {
      */
     public List<Cd> getAllCds(String filename) {
         InputStream input = this.getClass().getClassLoader().getResourceAsStream(filename);
-        assert input != null;
         BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 
         List<Cd> cdsList = new ArrayList<>();
