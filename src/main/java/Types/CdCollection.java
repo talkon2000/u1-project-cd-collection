@@ -1,5 +1,6 @@
 package Types;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CdCollection {
@@ -10,7 +11,7 @@ public class CdCollection {
      *
      */
     public CdCollection() {
-        //TODO: implement
+        cds = new ArrayList<>();
     }
 
     /**
@@ -18,7 +19,9 @@ public class CdCollection {
      * Should rely on the display* method of the Cd class
      */
     public void displayCdCollection() {
-        //TODO: implement
+        for (Cd cd : cds) {
+            cd.displayCD();
+        }
     }
 
     /**
@@ -32,9 +35,8 @@ public class CdCollection {
     /**
      * Method that adds a Cd object to this collection
      */
-    public void addCD() {
-        //TODO: implement
-        //Think about what argument(s) this method should have
+    public void addCD(Cd cd) {
+        cds.add(cd);
     }
 
     /**
@@ -43,8 +45,13 @@ public class CdCollection {
      * @return a new collection made up of only the CDs that match the search
      */
     public CdCollection findCdsByArtist(String artist) {
-        //TODO: implement
-        return null;
+        CdCollection searchResults = new CdCollection();
+        for (Cd cd : cds) {
+            if (cd.artist.equals(artist)) {
+                searchResults.addCD(cd);
+            }
+        }
+        return searchResults;
     }
 
     /**
@@ -54,7 +61,14 @@ public class CdCollection {
      * @return a new list of songs that have the same title as the search
      */
     public List<Song> findSongsByTitle(String title) {
-        //TODO: implement
-        return null;
+        List<Song> searchResults = new ArrayList<>();
+        for (Cd cd : cds) {
+            for (Song song : cd.songs) {
+                if (song.title.equals(title)) {
+                    searchResults.add(song);
+                }
+            }
+        }
+        return searchResults;
     }
 }

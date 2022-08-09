@@ -4,9 +4,11 @@ public class Cd {
 
     public String title;
     public String artist;
+    public int year;
     public int rating;
     public int numOfSongs;
     public Song[] songs;
+    public int index;
 
     /**
      * Constructs a new Cd object with the following fields
@@ -16,8 +18,14 @@ public class Cd {
      * @param rating: rating of cd
      * @param numOfSongs: number of songs on the cd
      */
-    public Cd(String title, String artist, int rating, int numOfSongs) {
-        //TODO: implement
+    public Cd(String title, String artist, int year, int rating, int numOfSongs) {
+        this.title = title;
+        this.artist = artist;
+        this.year = year;
+        this.rating = rating;
+        this.numOfSongs = numOfSongs;
+        songs = new Song[numOfSongs];
+        index = 0;
     }
 
     /**
@@ -25,12 +33,12 @@ public class Cd {
      * Makes use of the toString() method
      */
     public void displayCD() {
-        //TODO: implement
+        System.out.println(this);
     }
 
-    public void addSong() {
-        //TODO: implement
-        //Think about what argument(s) this method should have
+    public void addSong(Song song) {
+        songs[index] = song;
+        index++;
     }
 
     /**
@@ -39,7 +47,14 @@ public class Cd {
      */
     @Override
     public String toString() {
-        //TODO: implement
-        return null;
+        String result = "Artist: " + artist + "\n" +
+                        "Title: " + title + "\n" +
+                        "Release year: " + year + "\n" +
+                        "Rating: " + rating + "\n" +
+                        "Songs: " + "\n";
+        for (Song song : songs) {
+            result += song + "\n";
+        }
+        return result.trim();
     }
 }
