@@ -46,6 +46,8 @@ You can find documentation for that below.
 
 [An example](https://www.baeldung.com/java-exceptions#2-try-catch)
 
+Instead of throwing an exception, we want the program to catch the exception, output a friendly message to the user so they know what happened, and then close.
+
 ## Assignment 3: Complete the body of the methods in your classes
 #### ** This assignment should be started after assignment 2, but you may be unable to finish it until later
 In this assignment, you will be completing the methods found in your classes.
