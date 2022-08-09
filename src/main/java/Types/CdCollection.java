@@ -39,7 +39,6 @@ public class CdCollection {
 
     /**
      * Method that returns a new collection of CDs that match a particular artist
-     *
      * @param artist: artist to search for
      * @return a new collection made up of only the CDs that match the search
      */

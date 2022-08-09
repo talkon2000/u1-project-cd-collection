@@ -7,14 +7,17 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This is a utility class with one method that should parse the data from an input file into a list of Cds
+ */
 public class CDReader {
-    String filename;
-
-    public CDReader(String filename) {
-        this.filename = filename;
-    }
-
-    public List<Cd> getAllCds() throws IOException {
+    /**
+     * This method should read every line in the file and create a number of Cd objects
+     * @param filename: file to get data from
+     * @return a new list of every created Cd object
+     * @throws IOException if the file is not found
+     */
+    public List<Cd> getAllCds(String filename) throws IOException {
         InputStream input = this.getClass().getClassLoader().getResourceAsStream(filename);
         assert input != null;
         BufferedReader reader = new BufferedReader(new InputStreamReader(input));

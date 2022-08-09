@@ -1,17 +1,19 @@
+import Types.Cd;
 import Types.CdCollection;
 
-import java.io.InputStream;
-import java.nio.file.Path;
+import java.io.IOException;
+import java.util.List;
 
 public class CDDriver {
-    public String fileName;
-    public CdCollection collection;
 
-    public void setup() {
-        collection = new CdCollection();
-        fileName = "cds_short.txt";
-    }
+    public static void main(String[] args) throws IOException {
+        String filename = "cds_short.txt";
+        CDReader cdReader = new CDReader();
+        List<Cd> cdsList = cdReader.getAllCds(filename);
 
-    public static void main(String[] args) {
+        CdCollection collection = new CdCollection();
+        for (Cd cd : cdsList) {
+            //TODO: add each cd to the collection
+        }
     }
 }
