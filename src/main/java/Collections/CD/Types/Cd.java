@@ -37,6 +37,7 @@ public class Cd {
     public void addSong() {
         //TODO: implement
         //Think about what argument(s) this method should have
+        //This should make use of the index field
     }
 
     /**
