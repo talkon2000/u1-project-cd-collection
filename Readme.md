@@ -147,13 +147,15 @@ Then, answer these questions:
 ## Assignment 7: Sort lists using comparable
 #### ** This assignment should be done after 'Comparable and using sort()'
 It is finally time to finish this project! 
-The last thing you need to do is use your new sorting prowess to sort the CDs in your collection.
+The last thing you need to do is use your new sorting prowess to sort your collections.
 
 Your boss has declared that a natural ordering for CDs is to order by the year they released.
 If multiple CDs released in the same year, you should sort alphabetically by the Title of the album.
 
+She also declared that a natural ordering for Books is to order by their ID.
+
 With the knowledge you have gained over the course of this unit, and your boss's instructions,
-you can now implement the final methods missing in this project, and sort your collection!
+you can now implement the final methods missing in this project, and sort your collections!
 
 #
 ***
@@ -202,17 +204,19 @@ Instead of just running the program and getting some output, this should allow t
 
 For example, it might look like this:
 
-    Welcome to the CD Collection sorter!
+    Welcome to the Collection manager!
     What would you like to do?
     1) Sort your CD collection by year
+    2) Sort your Book collection by ID
 
 This can be used to great effect after you have completed the other challenges, like so:
 
     What would you like to do?
     1) Sort your CD collection by year
     2) Sort your CD collection by artist
-    3) Change your output type (console vs write to file)
-    4) Change your pagination preferences
+    3) Sort your Book collection by ID
+    4) Change your output type (console vs write to file)
+    5) Change your pagination preferences
 
 The way this menu looks and works is completely up to you.
 Again, there is no right way to do this, as long as it provides a good user experience, and is bug-free.
@@ -226,7 +230,7 @@ If you don't know, pagination is the practice of turning a giant, unwieldy block
 It will be up to you to decide how to paginate your output.
 
 Should it be a certain number of lines? 
-A certain number of albums? 
+A certain number of entries? 
 A combination of both?
 
 What other features should your pagination have?
