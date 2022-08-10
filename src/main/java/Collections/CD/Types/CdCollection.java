@@ -1,4 +1,4 @@
-package Types;
+package Collections.CD.Types;
 
 import java.util.List;
 
@@ -7,7 +7,6 @@ public class CdCollection {
 
     /**
      * Constructor for CdCollection. This object should hold all CDs in the collection.
-     *
      */
     public CdCollection() {
         //TODO: implement
@@ -35,6 +34,7 @@ public class CdCollection {
     public void addCD() {
         //TODO: implement
         //Think about what argument(s) this method should have
+        //Should it accept a cd? Or should it accept everything that creates a cd?
     }
 
     /**
@@ -49,7 +49,6 @@ public class CdCollection {
 
     /**
      * Method that searches all songs in all CDs in the collection for a particular title
-     *
      * @param title: title to search for
      * @return a new list of songs that have the same title as the search
      */

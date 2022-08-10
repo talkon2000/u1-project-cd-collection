@@ -1,4 +1,4 @@
-package Types;
+package Collections.CD.Types;
 
 public class Song {
     public String title;

@@ -28,7 +28,7 @@ Your job is to:
 * Fix the bug.
 * Make sure all unit tests are passing, including the ones that you wrote.
 #### Steps to reproduce:
-1. Navigate to the CDDriver.java class
+1. Navigate to the CollectionsManager.java class
 2. Try to run the main method
 3. You should see an error message:
 

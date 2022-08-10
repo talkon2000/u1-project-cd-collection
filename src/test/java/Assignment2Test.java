@@ -1,3 +1,6 @@
+import Collections.CD.CDDriver;
+import Collections.CD.CDReader;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Assignment2Test {
 
-    private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
     @BeforeEach
@@ -18,7 +20,7 @@ public class Assignment2Test {
 
     @Test
     public void programCompiles() {
-        CDDriver.main(new String[]{""});
+        new CDDriver().getCdCollection("cds_short.txt");
     }
 
     @Test
