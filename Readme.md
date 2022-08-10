@@ -50,7 +50,7 @@ Instead of throwing an exception, we want the program to catch the exception, ou
 
 ## Assignment 3: Complete the body of the methods in your classes
 #### ** This assignment should be started after assignment 2, but you may be unable to finish it until later
-In this assignment, you will be completing the methods found in your classes.
+In this assignment, you will be completing the methods of the classes found in the Collections.CD package.
 We have given you the method declarations, but it is your job to implement the logic of each.
 
 Take a look at the ```cds_short.txt``` file to see how you need to parse the input.
@@ -65,7 +65,6 @@ Your display methods should output in the following format:
     <Song #1 title>; <Song #1 length>
     <Song #2 title>; <Song #2 length>
     ...
-    <new line>
     Artist: <artist>
     ...
 
@@ -84,7 +83,7 @@ Feel free to work with others on this assignment.
 #### ** This assignment should be done after 'Memory and Statics' and 'Encapsulation'
 Now that you have learned about the importance of encapsulation, you need to apply those lessons to your code.
 
-Right now, every class is improperly encapsulated, and will need changing.
+Right now, every class in the Collections.CD package is improperly encapsulated, and will need changing.
 This may change the way you are accessing information from other classes, and it may break your code (temporarily).
 
 ### Things to remember:
@@ -92,9 +91,45 @@ This may change the way you are accessing information from other classes, and it
 * getter and setter methods for private variables
 * defensive copying of mutable instance variables
 
-## Assignment 5: Change to lists
+## Assignment 5: Polymorphism and interfaces
+#### ** This assignment should be completed after 'Polymorphism Interfaces'
+With your new knowledge of Polymorphism, there is a new problem you need to solve.
+If you take a look at the CollectionManager.java file, you will see that we have one method to fetch our CD Collection.
+But now, your boss wants you to adapt this program to be able to import and sort books.
+
+As the program is now, adding that functionality would look something like this:
+
+```
+public static void main(String[] args) {
+        CdCollection cdCollection = getCdCollectionFromDriver(new CDDriver());
+        BookCollection bookCollection = getBookCollectionFromDriver(new BookDriver());
+    }
+
+    private static CdCollection getCdCollectionFromDriver(CDDriver cdDriver) {
+        return cdDriver.getCdCollection("cds_short.txt");
+    }
+
+    private static BookCollection getBookCollectionFromDriver(BookDriver bookDriver) {
+        return bookDriver.getBookCollection("gutenberg_books.csv");
+    }
+```
+
+Do you notice any redundancy? If not, take a look at BookCollection.java and CdCollection.java.
+Or BookDriver.java and CDDriver.java
+
+These classes are nearly identical!
+
+We want to use polymorphism interfaces to change the way these classes work.
+
+In this assignment, you will need to create two new interfaces. `CollectionImpl` and `CollectionDriverImpl`
+
+Then, you will implement those interfaces in the classes we mentioned above.
+
+Finally, you will change the methods in CollectionManager.java to accept and return instances of those interfaces.
+
+## Assignment 6: Change to lists
 #### ** This assignment should be done after 'Big O Polynomial, Lists'
-Now that we have learned about Big O and the efficiency of lists, let's put it into practice.
+Now that you have learned about Big O and the efficiency of lists, let's put it into practice.
 Right now, we are using arrays to store Songs in our CDs.
 In this assignment, you will change that array to a list.
 
@@ -109,16 +144,18 @@ Then, answer these questions:
 * What is the Big O runtime complexity of each of those methods?
 * What is the Big O space complexity of each of those methods?
 
-## Assignment 6: Sort lists using comparable
+## Assignment 7: Sort lists using comparable
 #### ** This assignment should be done after 'Comparable and using sort()'
 It is finally time to finish this project! 
-The last thing you need to do is use your new sorting prowess to sort the CDs in your collection.
+The last thing you need to do is use your new sorting prowess to sort your collections.
 
 Your boss has declared that a natural ordering for CDs is to order by the year they released.
 If multiple CDs released in the same year, you should sort alphabetically by the Title of the album.
 
+She also declared that a natural ordering for Books is to order by their ID.
+
 With the knowledge you have gained over the course of this unit, and your boss's instructions,
-you can now implement the final methods missing in this project, and sort your collection!
+you can now implement the final methods missing in this project, and sort your collections!
 
 #
 ***
@@ -167,17 +204,19 @@ Instead of just running the program and getting some output, this should allow t
 
 For example, it might look like this:
 
-    Welcome to the CD Collection sorter!
+    Welcome to the Collection manager!
     What would you like to do?
     1) Sort your CD collection by year
+    2) Sort your Book collection by ID
 
 This can be used to great effect after you have completed the other challenges, like so:
 
     What would you like to do?
     1) Sort your CD collection by year
     2) Sort your CD collection by artist
-    3) Change your output type (console vs write to file)
-    4) Change your pagination preferences
+    3) Sort your Book collection by ID
+    4) Change your output type (console vs write to file)
+    5) Change your pagination preferences
 
 The way this menu looks and works is completely up to you.
 Again, there is no right way to do this, as long as it provides a good user experience, and is bug-free.
@@ -191,7 +230,7 @@ If you don't know, pagination is the practice of turning a giant, unwieldy block
 It will be up to you to decide how to paginate your output.
 
 Should it be a certain number of lines? 
-A certain number of albums? 
+A certain number of entries? 
 A combination of both?
 
 What other features should your pagination have?
