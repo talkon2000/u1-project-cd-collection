@@ -13,7 +13,7 @@ public class LibraryManager {
     }
 
     private static LibraryImpl getLibraryFromDriver(LibraryDriverImpl driver) {
-        return driver.getLibrary("cds_short.txt");
+        return driver.getLibrary("cds_short.csv");
     }
 
 }

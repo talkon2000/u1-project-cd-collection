@@ -29,7 +29,7 @@ public class Assignment3Test {
         cd2 = buildCd2();
         cd3 = buildCd3();
         cd4 = buildCd4();
-        String filename = "cds_short.txt";
+        String filename = "cds_short.csv";
         CDReader cdReader = new CDReader();
         List<Cd> cdsList = cdReader.getAllCds(filename);
         if (cdsList == null) {

@@ -19,26 +19,26 @@ public class Assignment2Test {
 
     @Test
     public void programCompiles() {
-        new CDDriver().getLibrary("cds_short.txt");
+        new CDDriver().getLibrary("cds_short.csv");
     }
 
     @Test
     public void cdReader_reachesEndOfFile() {
         CDReader reader = new CDReader();
-        reader.getAllCds("cds_short.txt");
+        reader.getAllCds("cds_short.csv");
         assertEquals("Reached end of file",outputStreamCaptor.toString().trim());
     }
 
     @Test
     public void cdReader_doesNotThrowException_returnsNull() {
         CDReader reader = new CDReader();
-        assertNull(reader.getAllCds("cds_short.tx"));
+        assertNull(reader.getAllCds("cds_sh.csv"));
     }
 
     @Test
     public void cdReader_outputsMessageInsteadOfExiting() {
         CDReader reader = new CDReader();
-        reader.getAllCds("cds_short.tx");
+        reader.getAllCds("cds_sh.csv");
         assertFalse(outputStreamCaptor.toString().isEmpty());
     }
 }
