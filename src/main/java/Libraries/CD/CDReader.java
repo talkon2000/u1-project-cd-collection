@@ -26,8 +26,8 @@ public class CDReader {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 
-            String title = "";
             String artist = "";
+            String title = "";
             int year = 0;
             int rating = 0;
             int numOfSongs = 0;
@@ -39,9 +39,9 @@ public class CDReader {
             int index = 0;
             while ((line = reader.readLine()) != null) {
                 switch (index) {
-                    case 0: title = line;
+                    case 0: artist = line;
                             break;
-                    case 1: artist = line;
+                    case 1: title = line;
                             break;
                     case 2: year = Integer.parseInt(line);
                             break;
