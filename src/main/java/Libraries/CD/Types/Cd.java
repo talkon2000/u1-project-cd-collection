@@ -1,5 +1,8 @@
 package Libraries.CD.Types;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cd {
 
     private String title;
@@ -7,8 +10,7 @@ public class Cd {
     private int year;
     private int rating;
     private int numOfSongs;
-    private Song[] songs;
-    private int index;
+    private List<Song> songs;
 
     /**
      * Constructs a new Cd object with the following fields
@@ -24,8 +26,7 @@ public class Cd {
         this.year = year;
         this.rating = rating;
         this.numOfSongs = numOfSongs;
-        songs = new Song[numOfSongs];
-        index = 0;
+        songs = new ArrayList<>();
     }
 
     /**
@@ -37,8 +38,7 @@ public class Cd {
     }
 
     public void addSong(Song song) {
-        songs[index] = song;
-        index++;
+        songs.add(song);
     }
 
     /**
@@ -78,7 +78,7 @@ public class Cd {
         return numOfSongs;
     }
 
-    public Song[] getSongs() {
-        return songs.clone();
+    public List<Song> getSongs() {
+        return new ArrayList<Song>(songs);
     }
 }

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -94,8 +95,8 @@ public class Assignment4Test {
     void cd_songsListNotModifiable() {
         Cd cd = new Cd("title", "artist", 1999, 5, 1);
         cd.addSong(new Song("title", "2:00"));
-        Song[] songs = cd.getSongs();
-        songs[0] = new Song("title2", "4:00");
+        List<Song> songs = cd.getSongs();
+        songs.add(new Song("title2", "4:00"));
         assertNotEquals(songs, cd.getSongs());
     }
 
