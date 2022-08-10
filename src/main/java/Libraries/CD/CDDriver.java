@@ -1,7 +1,7 @@
-package Collections.CD;
+package Libraries.CD;
 
-import Collections.CD.Types.Cd;
-import Collections.CD.Types.CdCollection;
+import Libraries.CD.Types.Cd;
+import Libraries.CD.Types.CdCollection;
 
 import java.util.List;
 
