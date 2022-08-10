@@ -1,6 +1,6 @@
 import Libraries.CD.CDReader;
 import Libraries.CD.Types.Cd;
-import Libraries.CD.Types.CdCollection;
+import Libraries.CD.Types.CdLibrary;
 import Libraries.CD.Types.Song;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class Assignment3Test {
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
-    CdCollection collection;
+    CdLibrary library;
     Cd cd1;
     Cd cd2;
     Cd cd3;
@@ -36,16 +36,16 @@ public class Assignment3Test {
             return;
         }
 
-        collection = new CdCollection();
+        library = new CdLibrary();
         for (Cd cd : cdsList) {
-            collection.addCD(cd);
+            library.addCD(cd);
         }
         System.setOut(new PrintStream(outputStreamCaptor));
     }
 
     @Test
-    void collection_hasAllCds() {
-        Assertions.assertEquals(4, collection.getCds().size());
+    void library_hasAllCds() {
+        Assertions.assertEquals(4, library.getCds().size());
     }
 
     @Test
@@ -67,8 +67,8 @@ public class Assignment3Test {
     }
 
     @Test
-    void collection_everyCdProperlyAdded() {
-        List<Cd> cds = collection.getCds();
+    void library_everyCdProperlyAdded() {
+        List<Cd> cds = library.getCds();
         assertTrue(cdsEqual(cd1, cds.get(0)));
         assertTrue(cdsEqual(cd2, cds.get(1)));
         assertTrue(cdsEqual(cd3, cds.get(2)));

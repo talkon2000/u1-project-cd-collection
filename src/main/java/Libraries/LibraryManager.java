@@ -1,16 +1,16 @@
 package Libraries;
 
 import Libraries.CD.CDDriver;
-import Libraries.CD.Types.CdCollection;
+import Libraries.CD.Types.CdLibrary;
 
-public class CollectionManager {
+public class LibraryManager {
 
     public static void main(String[] args) {
-        CdCollection cdCollection = getCdCollectionFromDriver(new CDDriver());
+        CdLibrary cdLibrary = getCdLibraryFromDriver(new CDDriver());
     }
 
-    private static CdCollection getCdCollectionFromDriver(CDDriver cdDriver) {
-        return cdDriver.getCdCollection("cds_short.txt");
+    private static CdLibrary getCdLibraryFromDriver(CDDriver cdDriver) {
+        return cdDriver.getCdLibrary("cds_short.txt");
     }
 
 }
