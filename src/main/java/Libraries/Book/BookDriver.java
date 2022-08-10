@@ -7,7 +7,12 @@ import java.util.List;
 
 public class BookDriver {
 
-    public BookLibrary getBookLibrary(String filename) {
+    public final String filename;
+    public BookDriver(String filename) {
+        this.filename = filename;
+    }
+
+    public BookLibrary getBookLibrary() {
         BookReader bookReader = new BookReader();
         List<Book> booksList = bookReader.getAllBooks(filename);
         if (booksList == null) {
