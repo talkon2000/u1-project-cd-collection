@@ -1,7 +1,7 @@
-package Collections.Book;
+package Libraries.Book;
 
-import Collections.Book.Types.Book;
-import Collections.Book.Types.BookCollection;
+import Libraries.Book.Types.Book;
+import Libraries.Book.Types.BookCollection;
 
 import java.util.List;
 

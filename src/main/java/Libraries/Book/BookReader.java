@@ -1,6 +1,6 @@
-package Collections.Book;
+package Libraries.Book;
 
-import Collections.Book.Types.Book;
+import Libraries.Book.Types.Book;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 

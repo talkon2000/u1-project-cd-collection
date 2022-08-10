@@ -1,5 +1,5 @@
-import Collections.CD.CDDriver;
-import Collections.CD.CDReader;
+import Libraries.CD.CDDriver;
+import Libraries.CD.CDReader;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

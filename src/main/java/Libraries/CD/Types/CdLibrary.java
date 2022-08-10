@@ -1,4 +1,4 @@
-package Collections.CD.Types;
+package Libraries.CD.Types;
 
 import java.util.List;
 

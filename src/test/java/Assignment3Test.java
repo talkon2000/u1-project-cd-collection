@@ -1,7 +1,7 @@
-import Collections.CD.CDReader;
-import Collections.CD.Types.Cd;
-import Collections.CD.Types.CdCollection;
-import Collections.CD.Types.Song;
+import Libraries.CD.CDReader;
+import Libraries.CD.Types.Cd;
+import Libraries.CD.Types.CdCollection;
+import Libraries.CD.Types.Song;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

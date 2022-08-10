@@ -1,7 +1,7 @@
-package Collections;
+package Libraries;
 
-import Collections.CD.CDDriver;
-import Collections.CD.Types.CdCollection;
+import Libraries.CD.CDDriver;
+import Libraries.CD.Types.CdCollection;
 
 public class CollectionManager {
 

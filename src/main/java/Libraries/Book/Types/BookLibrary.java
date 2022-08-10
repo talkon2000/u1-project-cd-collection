@@ -1,4 +1,4 @@
-package Collections.Book.Types;
+package Libraries.Book.Types;
 
 import java.util.ArrayList;
 import java.util.List;
