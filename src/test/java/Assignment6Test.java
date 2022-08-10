@@ -1,5 +1,5 @@
-import Collections.CD.Types.Cd;
-import Collections.CD.Types.Song;
+import Libraries.CD.Types.Cd;
+import Libraries.CD.Types.Song;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

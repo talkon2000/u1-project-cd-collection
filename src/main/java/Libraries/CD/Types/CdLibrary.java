@@ -1,61 +1,67 @@
-package Collections.CD.Types;
+package Libraries.CD.Types;
+
+import Libraries.LibraryImpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CdCollection {
+public class CdLibrary implements LibraryImpl<Cd> {
     private List<Cd> cds;
 
     /**
-     * Constructor for CdCollection. This object should hold all CDs in the collection.
+     * Constructor for CdLibrary. This object should hold all CDs in the Library.
      *
      */
-    public CdCollection() {
+    public CdLibrary() {
         cds = new ArrayList<>();
     }
 
     /**
-     * Method that outputs the entire contents of the CdCollection to the console
+     * Method that outputs the entire contents of the CdLibrary to the console
      * Should rely on the display* method of the Cd class
      */
-    public void displayCdCollection() {
+    @Override
+    public void displayLibrary() {
         for (Cd cd : cds) {
             cd.displayCD();
         }
     }
 
     /**
-     * Method that sorts each Cd in the collection by its natural ordering.
+     * Method that sorts each Cd in the Library by its natural ordering.
      * This method may be incomplete until assignment 6
      */
-    public void sortCdCollection() {
+    @Override
+    public void sortLibrary() {
         //TODO: implement
     }
 
     /**
-     * Method that adds a Cd object to this collection
+     * Method that adds a Cd object to this Library
      */
-    public void addCD(Cd cd) {
-        cds.add(cd);
+    public void addItem(Object cd) {
+        if (cd.getClass() == Cd.class) {
+            cds.add((Cd) cd);
+        }
     }
 
     /**
-     * Method that returns a new collection of CDs that match a particular artist
+     * Method that returns a new Library of CDs that match a particular artist
      * @param artist: artist to search for
-     * @return a new collection made up of only the CDs that match the search
+     * @return a new Library made up of only the CDs that match the search
      */
-    public CdCollection findCdsByArtist(String artist) {
-        CdCollection searchResults = new CdCollection();
+    public CdLibrary findCdsByArtist(String artist) {
+        CdLibrary searchResults = new CdLibrary();
         for (Cd cd : cds) {
             if (cd.getArtist().equals(artist)) {
-                searchResults.addCD(cd);
+                searchResults.addItem(cd);
             }
         }
         return searchResults;
     }
 
     /**
-     * Method that searches all songs in all CDs in the collection for a particular title
+     * Method that searches all songs in all CDs in the Library for a particular title
      *
      * @param title: title to search for
      * @return a new list of songs that have the same title as the search
@@ -72,7 +78,7 @@ public class CdCollection {
         return searchResults;
     }
 
-    public List<Cd> getCds() {
+    public List<Cd> getLibraryList() {
         return new ArrayList<Cd>(cds);
     }
 }

@@ -1,7 +1,7 @@
-package Collections.CD;
+package Libraries.CD;
 
-import Collections.CD.Types.Cd;
-import Collections.CD.Types.Song;
+import Libraries.CD.Types.Cd;
+import Libraries.CD.Types.Song;
 
 import java.io.BufferedReader;
 import java.io.IOException;

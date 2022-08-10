@@ -1,4 +1,4 @@
-package Collections.Book.Types;
+package Libraries.Book.Types;
 
 public class Book {
     private final int id;

@@ -1,6 +1,6 @@
-import Collections.CD.Types.Cd;
-import Collections.CD.Types.CdCollection;
-import Collections.CD.Types.Song;
+import Libraries.CD.Types.Cd;
+import Libraries.CD.Types.CdLibrary;
+import Libraries.CD.Types.Song;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
@@ -40,15 +40,15 @@ public class Assignment4Test {
     }
 
     @Test
-    void cdCollection_internalStateIsNotExposed() {
-        Class<?> cdCollectionClass = CdCollection.class;
-        Field[] declaredFields = cdCollectionClass.getDeclaredFields();
+    void cdLibrary_internalStateIsNotExposed() {
+        Class<?> cdLibraryClass = CdLibrary.class;
+        Field[] declaredFields = cdLibraryClass.getDeclaredFields();
 
-        assertTrue(0 < declaredFields.length, "Expected CdCollection class to contain fields!");
+        assertTrue(0 < declaredFields.length, "Expected CdLibrary class to contain fields!");
 
         for (Field declaredField : declaredFields) {
             boolean isFieldPrivate = Modifier.isPrivate(declaredField.getModifiers());
-            assertTrue(isFieldPrivate, " Expected CdCollection class fields to not be directly accessible!");
+            assertTrue(isFieldPrivate, " Expected CdLibrary class fields to not be directly accessible!");
         }
     }
 
@@ -79,15 +79,15 @@ public class Assignment4Test {
     }
 
     @Test
-    void cdCollection_internalStateIsUnmodifiable() {
-        Class<?> cdCollectionClass = CdCollection.class;
-        Method[] declaredMethods = cdCollectionClass.getDeclaredMethods();
+    void cdLibrary_internalStateIsUnmodifiable() {
+        Class<?> cdLibraryClass = CdLibrary.class;
+        Method[] declaredMethods = cdLibraryClass.getDeclaredMethods();
 
-        assertTrue(0 < declaredMethods.length, "Expected CdCollection class methods to exist!");
+        assertTrue(0 < declaredMethods.length, "Expected CdLibrary class methods to exist!");
 
         for (Method declaredMethod : declaredMethods) {
             String methodName = declaredMethod.getName();
-            assertFalse(methodName.startsWith("set"), "Expected CdCollection class fields to not be modified!");
+            assertFalse(methodName.startsWith("set"), "Expected CdLibrary class fields to not be modified!");
         }
     }
 
@@ -101,19 +101,19 @@ public class Assignment4Test {
     }
 
     @Test
-    void cdCollection_cdsListProtectedByDefensiveCopying() {
-        CdCollection collection = new CdCollection();
+    void cdLibrary_cdsListProtectedByDefensiveCopying() {
+        CdLibrary library = new CdLibrary();
         Cd cd1 = new Cd("album name", "artist", 1999, 5, 1);
         cd1.addSong(new Song("title", "1:00"));
-        collection.addCD(cd1);
+        library.addItem(cd1);
 
         Cd maliciousCd = new Cd("wrong name", "wrong artist", 2000, 6, 1);
         maliciousCd.addSong(new Song("wrong title", "2:00"));
-        List<Cd> cds = collection.getCds();
+        List<Cd> cds = library.getLibraryList();
         cds.remove(cd1);
         cds.add(maliciousCd);
 
-        assertNotEquals(cds, collection.getCds());
+        assertNotEquals(cds, library.getLibraryList());
 
     }
 
