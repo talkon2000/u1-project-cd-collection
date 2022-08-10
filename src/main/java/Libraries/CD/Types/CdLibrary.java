@@ -24,6 +24,7 @@ public class CdLibrary implements LibraryImpl<Cd> {
     public void displayLibrary() {
         for (Cd cd : cds) {
             cd.displayCD();
+            System.out.println();
         }
     }
 

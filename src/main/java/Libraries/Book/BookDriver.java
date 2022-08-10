@@ -8,8 +8,13 @@ import java.util.List;
 
 public class BookDriver implements LibraryDriverImpl<BookLibrary> {
 
+    private final String filename;
+
+    public BookDriver(String filename) {
+        this.filename = filename;
+    }
     @Override
-    public BookLibrary getLibrary(String filename) {
+    public BookLibrary getLibrary() {
         BookReader bookReader = new BookReader();
         List<Book> booksList = bookReader.getAllBooks(filename);
         if (booksList == null) {

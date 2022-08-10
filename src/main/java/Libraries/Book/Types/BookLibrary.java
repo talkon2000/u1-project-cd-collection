@@ -20,6 +20,7 @@ public class BookLibrary implements LibraryImpl<Book> {
     public void displayLibrary() {
         for (Book book : books) {
             book.displayBook();
+            System.out.println();
         }
     }
 
