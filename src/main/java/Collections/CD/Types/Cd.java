@@ -39,7 +39,6 @@ public class Cd {
 
     public void addSong(Song song) {
         songs.add(song);
-        numOfSongs++;
     }
 
     /**
@@ -80,6 +79,6 @@ public class Cd {
     }
 
     public List<Song> getSongs() {
-        return songs;
+        return new ArrayList<Song>(songs);
     }
 }
