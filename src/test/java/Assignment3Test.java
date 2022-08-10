@@ -14,8 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Assignment3Test {
-    //TEMPORARY COMMENTING
-    /*
+
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
     CdCollection collection;
@@ -83,9 +82,9 @@ public class Assignment3Test {
                 cd1.getYear() == cd2.getYear() &&
                 cd1.getRating() == cd2.getRating() &&
                 cd1.getNumOfSongs() == cd2.getNumOfSongs()) {
-            for (int i = 0; i < cd1.getSongs().length; i++) {
-                if (!cd1.getSongs()[i].getTitle().equals(cd2.getSongs()[i].getTitle()) ||
-                        !cd1.getSongs()[i].getLength().equals(cd2.getSongs()[i].getLength())) {
+            for (int i = 0; i < cd1.getSongs().size(); i++) {
+                if (!cd1.getSongs().get(i).getTitle().equals(cd2.getSongs().get(i).getTitle()) ||
+                        !cd1.getSongs().get(i).getLength().equals(cd2.getSongs().get(i).getLength())) {
                     return false;
                 }
             }
@@ -151,5 +150,5 @@ public class Assignment3Test {
         cd4.addSong(new Song("When the Darkest Night Falls","2:32"));
         cd4.addSong(new Song("Nocturne Thule","5:16"));
         return cd4;
-    } */
+    }
 }
