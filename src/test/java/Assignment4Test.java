@@ -1,4 +1,6 @@
-import Types.*;
+import Collections.CD.Types.Cd;
+import Collections.CD.Types.CdCollection;
+import Collections.CD.Types.Song;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;

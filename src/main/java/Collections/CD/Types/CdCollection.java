@@ -1,4 +1,4 @@
-package Types;
+package Collections.CD.Types;
 
 import java.util.ArrayList;
 import java.util.List;
