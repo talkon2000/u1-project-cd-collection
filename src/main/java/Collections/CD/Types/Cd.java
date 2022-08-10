@@ -2,30 +2,25 @@ package Collections.CD.Types;
 
 public class Cd {
 
-    private String title;
-    private String artist;
-    private int year;
-    private int rating;
-    private int numOfSongs;
-    private Song[] songs;
-    private int index;
+    public String title;
+    public String artist;
+    public int year;
+    public int rating;
+    public int numOfSongs;
+    public Song[] songs;
+    public int index;
 
     /**
      * Constructs a new Cd object with the following fields
      * Initialize Song[] songs to size numOfSongs
      * @param title: title of cd
      * @param artist: artist of cd
+     * @param year: release year of cd
      * @param rating: rating of cd
      * @param numOfSongs: number of songs on the cd
      */
     public Cd(String title, String artist, int year, int rating, int numOfSongs) {
-        this.title = title;
-        this.artist = artist;
-        this.year = year;
-        this.rating = rating;
-        this.numOfSongs = numOfSongs;
-        songs = new Song[numOfSongs];
-        index = 0;
+        //TODO: implement
     }
 
     /**
@@ -33,12 +28,15 @@ public class Cd {
      * Makes use of the toString() method
      */
     public void displayCD() {
-        System.out.println(this);
+        //TODO: implement
     }
 
-    public void addSong(Song song) {
-        songs[index] = song;
-        index++;
+    /**
+     * Method that adds a song to this cd
+     */
+    public void addSong() {
+        //TODO: implement
+        //Think about what argument(s) this method should have
     }
 
     /**
@@ -47,38 +45,7 @@ public class Cd {
      */
     @Override
     public String toString() {
-        String result = "Artist: " + artist + "\n" +
-                        "Title: " + title + "\n" +
-                        "Release year: " + year + "\n" +
-                        "Rating: " + rating + "\n" +
-                        "Songs: " + "\n";
-        for (Song song : songs) {
-            result += song + "\n";
-        }
-        return result.trim();
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getArtist() {
-        return artist;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public int getNumOfSongs() {
-        return numOfSongs;
-    }
-
-    public Song[] getSongs() {
-        return songs.clone();
+        //TODO: implement
+        return null;
     }
 }

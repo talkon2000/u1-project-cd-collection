@@ -1,17 +1,15 @@
 package Collections.CD.Types;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CdCollection {
-    private List<Cd> cds;
+    public List<Cd> cds;
 
     /**
      * Constructor for CdCollection. This object should hold all CDs in the collection.
-     *
      */
     public CdCollection() {
-        cds = new ArrayList<>();
+        //TODO: implement
     }
 
     /**
@@ -19,9 +17,7 @@ public class CdCollection {
      * Should rely on the display* method of the Cd class
      */
     public void displayCdCollection() {
-        for (Cd cd : cds) {
-            cd.displayCD();
-        }
+        //TODO: implement
     }
 
     /**
@@ -35,8 +31,10 @@ public class CdCollection {
     /**
      * Method that adds a Cd object to this collection
      */
-    public void addCD(Cd cd) {
-        cds.add(cd);
+    public void addCD() {
+        //TODO: implement
+        //Think about what argument(s) this method should have
+        //Should it accept a cd? Or should it accept everything that creates a cd?
     }
 
     /**
@@ -45,34 +43,17 @@ public class CdCollection {
      * @return a new collection made up of only the CDs that match the search
      */
     public CdCollection findCdsByArtist(String artist) {
-        CdCollection searchResults = new CdCollection();
-        for (Cd cd : cds) {
-            if (cd.getArtist().equals(artist)) {
-                searchResults.addCD(cd);
-            }
-        }
-        return searchResults;
+        //TODO: implement
+        return null;
     }
 
     /**
      * Method that searches all songs in all CDs in the collection for a particular title
-     *
      * @param title: title to search for
      * @return a new list of songs that have the same title as the search
      */
     public List<Song> findSongsByTitle(String title) {
-        List<Song> searchResults = new ArrayList<>();
-        for (Cd cd : cds) {
-            for (Song song : cd.getSongs()) {
-                if (song.getTitle().equals(title)) {
-                    searchResults.add(song);
-                }
-            }
-        }
-        return searchResults;
-    }
-
-    public List<Cd> getCds() {
-        return new ArrayList<Cd>(cds);
+        //TODO: implement
+        return null;
     }
 }

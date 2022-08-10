@@ -7,17 +7,18 @@ import java.util.List;
 
 public class CDDriver {
 
+    /**
+     * Method that utilizes CDReader to create CdCollection object
+     * @param filename: filename passed to CDReader
+     * @return a new collection of all cds in file
+     */
     public CdCollection getCdCollection(String filename) {
         CDReader cdReader = new CDReader();
         List<Cd> cdsList = cdReader.getAllCds(filename);
-        if (cdsList == null) {
-            System.out.println("Exiting...");
-            System.exit(0);
-        }
 
         CdCollection collection = new CdCollection();
         for (Cd cd : cdsList) {
-            collection.addCD(cd);
+            //TODO: implement
         }
         return collection;
     }

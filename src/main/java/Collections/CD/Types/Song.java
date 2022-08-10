@@ -1,8 +1,8 @@
 package Collections.CD.Types;
 
 public class Song {
-    private String title;
-    private String length;
+    public String title;
+    public String length;
 
     /**
      * Constructs a new Song object with the following fields:
@@ -10,8 +10,7 @@ public class Song {
      * @param length: length of song
      */
     public Song(String title, String length) {
-        this.title = title;
-        this.length = length;
+        //TODO: implement
     }
 
     /**
@@ -19,7 +18,7 @@ public class Song {
      * Makes use of the toString() method
      */
     public void displaySong() {
-        System.out.println(this);
+        //TODO: implement
     }
 
     /**
@@ -28,14 +27,7 @@ public class Song {
      */
     @Override
     public String toString() {
-        return String.format("%s; %s", title, length);
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getLength() {
-        return length;
+        //TODO: implement
+        return null;
     }
 }
