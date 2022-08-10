@@ -14,7 +14,6 @@ public class BookDriver {
             System.out.println("Exiting...");
             System.exit(0);
         }
-
         BookCollection collection = new BookCollection();
         for (Book book : booksList) {
             collection.addBook(book);
