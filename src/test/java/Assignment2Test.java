@@ -19,7 +19,7 @@ public class Assignment2Test {
 
     @Test
     public void programCompiles() {
-        new CDDriver().getLibrary("cds_short.csv");
+        new CDDriver("cds_short.csv").getLibrary();
     }
 
     @Test

@@ -29,9 +29,5 @@ public class Assignment5Test {
 
         assertTrue(LibraryImpl.class == libraryDriverImplMethods[0].getReturnType(),
                 "Expected LibraryDriverImpl method to return LibraryImpl type!");
-
-        Class<?>[] parameterTypes = libraryDriverImplMethods[0].getParameterTypes();
-        assertTrue(1 == parameterTypes.length && String.class == parameterTypes[0],
-                "Expected LibraryDriverImpl method to take single parameter of String type!");
     }
 }

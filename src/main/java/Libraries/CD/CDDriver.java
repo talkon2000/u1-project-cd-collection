@@ -7,9 +7,13 @@ import Libraries.LibraryDriverImpl;
 import java.util.List;
 
 public class CDDriver implements LibraryDriverImpl<CdLibrary> {
+    private final String filename;
 
+    public CDDriver(String filename) {
+        this.filename = filename;
+    }
     @Override
-    public CdLibrary getLibrary(String filename) {
+    public CdLibrary getLibrary() {
         CDReader cdReader = new CDReader();
         List<Cd> cdsList = cdReader.getAllCds(filename);
         if (cdsList == null) {
