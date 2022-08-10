@@ -1,18 +1,18 @@
 ## Assignment 1: Planning
 #### ** This assignment should be done after 'Writing and Testing Functional Requirements'
-In this project, you will be designing a number of java classes with the end goal of sorting a collection of CDs.
+In this project, you will be designing a number of java classes with the end goal of sorting a Library of CDs.
 The data will come from a file ```cds_short.txt``` that we will provide for you (more on that later).
 
 
 For this assignment, you need to create a Plant UML file with the classes, and if possible, the methods you think you will need.
 
 ### Things you need to know:
-    A user should be able to give the program an entire collection of CDs.
+    A user should be able to give the program an entire Library of CDs.
     The program should be able to:
     * turn the data into java objects that represent their real-world counterparts.
-    * Sort the collection
-    * Search the collection for CDs from a particular artist
-    * Search the collection for songs with a particular title.
+    * Sort the Library
+    * Search the Library for CDs from a particular artist
+    * Search the Library for songs with a particular title.
 
 Important to note: There is no 'right' answer here. The point of this assignment is to practice with Plant UML and make sure you understand the project.
 You will meet with your product owner once you are done and talk about your solution.
@@ -28,7 +28,7 @@ Your job is to:
 * Fix the bug.
 * Make sure all unit tests are passing, including the ones that you wrote.
 #### Steps to reproduce:
-1. Navigate to the CollectionsManager.java class
+1. Navigate to the LibraryManager.java class
 2. Try to run the main method
 3. You should see an error message:
 
@@ -50,7 +50,7 @@ Instead of throwing an exception, we want the program to catch the exception, ou
 
 ## Assignment 3: Complete the body of the methods in your classes
 #### ** This assignment should be started after assignment 2, but you may be unable to finish it until later
-In this assignment, you will be completing the methods of the classes found in the Collections.CD package.
+In this assignment, you will be completing the methods of the classes found in the Libraries.CD package.
 We have given you the method declarations, but it is your job to implement the logic of each.
 
 Take a look at the ```cds_short.txt``` file to see how you need to parse the input.
@@ -83,7 +83,7 @@ Feel free to work with others on this assignment.
 #### ** This assignment should be done after 'Memory and Statics' and 'Encapsulation'
 Now that you have learned about the importance of encapsulation, you need to apply those lessons to your code.
 
-Right now, every class in the Collections.CD package is improperly encapsulated, and will need changing.
+Right now, every class in the Libraries.CD package is improperly encapsulated, and will need changing.
 This may change the way you are accessing information from other classes, and it may break your code (temporarily).
 
 ### Things to remember:
@@ -94,38 +94,38 @@ This may change the way you are accessing information from other classes, and it
 ## Assignment 5: Polymorphism and interfaces
 #### ** This assignment should be completed after 'Polymorphism Interfaces'
 With your new knowledge of Polymorphism, there is a new problem you need to solve.
-If you take a look at the CollectionManager.java file, you will see that we have one method to fetch our CD Collection.
+If you take a look at the LibraryManager.java file, you will see that we have one method to fetch our CD Library.
 But now, your boss wants you to adapt this program to be able to import and sort books.
 
 As the program is now, adding that functionality would look something like this:
 
 ```
 public static void main(String[] args) {
-        CdCollection cdCollection = getCdCollectionFromDriver(new CDDriver());
-        BookCollection bookCollection = getBookCollectionFromDriver(new BookDriver());
+        CdLibrary cdLibrary = getCdLibraryFromDriver(new CDDriver());
+        BookLibrary bookLibrary = getBookLibraryFromDriver(new BookDriver());
     }
 
-    private static CdCollection getCdCollectionFromDriver(CDDriver cdDriver) {
-        return cdDriver.getCdCollection("cds_short.txt");
+    private static CdLibrary getCdLibraryFromDriver(CDDriver cdDriver) {
+        return cdDriver.getCdLibrary("cds_short.txt");
     }
 
-    private static BookCollection getBookCollectionFromDriver(BookDriver bookDriver) {
-        return bookDriver.getBookCollection("gutenberg_books.csv");
+    private static BookLibrary getBookLibraryFromDriver(BookDriver bookDriver) {
+        return bookDriver.getBookLibrary("gutenberg_books.csv");
     }
 ```
 
-Do you notice any redundancy? If not, take a look at BookCollection.java and CdCollection.java.
+Do you notice any redundancy? If not, take a look at BookLibrary.java and CdLibrary.java.
 Or BookDriver.java and CDDriver.java
 
 These classes are nearly identical!
 
 We want to use polymorphism interfaces to change the way these classes work.
 
-In this assignment, you will need to create two new interfaces. `CollectionImpl` and `CollectionDriverImpl`
+In this assignment, you will need to create two new interfaces. `LibraryImpl` and `LibraryDriverImpl`
 
 Then, you will implement those interfaces in the classes we mentioned above.
 
-Finally, you will change the methods in CollectionManager.java to accept and return instances of those interfaces.
+Finally, you will change the methods in LibraryManager.java to accept and return instances of those interfaces.
 
 ## Assignment 6: Change to lists
 #### ** This assignment should be done after 'Big O Polynomial, Lists'
@@ -147,7 +147,7 @@ Then, answer these questions:
 ## Assignment 7: Sort lists using comparable
 #### ** This assignment should be done after 'Comparable and using sort()'
 It is finally time to finish this project!
-The last thing you need to do is use your new sorting prowess to sort your collections.
+The last thing you need to do is use your new sorting prowess to sort your Libraries.
 
 Your boss has declared that a natural ordering for CDs is to order by the year they released.
 If multiple CDs released in the same year, you should sort alphabetically by the Title of the album.
@@ -155,7 +155,7 @@ If multiple CDs released in the same year, you should sort alphabetically by the
 She also declared that a natural ordering for Books is to order by their ID.
 
 With the knowledge you have gained over the course of this unit, and your boss's instructions,
-you can now implement the final methods missing in this project, and sort your collections!
+you can now implement the final methods missing in this project, and sort your Libraries!
 
 #
 ***
@@ -184,16 +184,16 @@ If you need to know more, you'll have to do some digging!
 The internet will always be a great and vast resource for you, and now is a great time to start using it.
 
 ## Challenge 2: Sort using a comparator
-In this challenge, you will use a comparator to sort your collection, rather than the comparable interface.
+In this challenge, you will use a comparator to sort your Library, rather than the comparable interface.
 You have noticed that there are more ways you could sort the CDs than just by year.
 Perhaps you wanted to sort them alphabetically by artist? Or by number of songs?
 Or by the total length of the CD (sum of the length of all the songs).
 
-Your job is to make one or more comparators that you can use to sort your collection in different ways.
+Your job is to make one or more comparators that you can use to sort your Library in different ways.
 Make sure you name your comparators descriptively by what they are sorting, and how they are sorting it.
 
 ## Challenge 3: Output to a file instead of console
-In this challenge, you will make it *optional* to output your collections into a new ```collection.txt``` file.
+In this challenge, you will make it *optional* to output your Libraries into a new ```Library.txt``` file.
 You will need to ask the user if they want to write to the file or not.
 
 This should change your ```display*``` method(s).
@@ -204,17 +204,17 @@ Instead of just running the program and getting some output, this should allow t
 
 For example, it might look like this:
 
-    Welcome to the Collection manager!
+    Welcome to the Library manager!
     What would you like to do?
-    1) Sort your CD collection by year
-    2) Sort your Book collection by ID
+    1) Sort your CD Library by year
+    2) Sort your Book Library by ID
 
 This can be used to great effect after you have completed the other challenges, like so:
 
     What would you like to do?
-    1) Sort your CD collection by year
-    2) Sort your CD collection by artist
-    3) Sort your Book collection by ID
+    1) Sort your CD Library by year
+    2) Sort your CD Library by artist
+    3) Sort your Book Library by ID
     4) Change your output type (console vs write to file)
     5) Change your pagination preferences
 

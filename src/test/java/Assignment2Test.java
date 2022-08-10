@@ -1,5 +1,5 @@
-import Collections.CD.CDDriver;
-import Collections.CD.CDReader;
+import Libraries.CD.CDDriver;
+import Libraries.CD.CDReader;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +19,7 @@ public class Assignment2Test {
 
     @Test
     public void programCompiles() {
-        new CDDriver().getCdCollection("cds_short.txt");
+        new CDDriver().getLibrary("cds_short.txt");
     }
 
     @Test
