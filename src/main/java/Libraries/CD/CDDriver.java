@@ -7,12 +7,15 @@ import java.util.List;
 
 public class CDDriver {
 
+    public final String filename;
+    public CDDriver(String filename) {
+        this.filename = filename;
+    }
     /**
      * Method that utilizes CDReader to create CdLibrary object
-     * @param filename: filename passed to CDReader
      * @return a new Library of all cds in file
      */
-    public CdLibrary getCdLibrary(String filename) {
+    public CdLibrary getCdLibrary() {
         CDReader cdReader = new CDReader();
         List<Cd> cdsList = cdReader.getAllCds(filename);
 

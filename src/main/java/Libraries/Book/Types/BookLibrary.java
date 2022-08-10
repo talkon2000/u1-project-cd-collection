@@ -17,6 +17,7 @@ public class BookLibrary {
     public void displayBookLibrary() {
         for (Book book : books) {
             book.displayBook();
+            System.out.println();
         }
     }
 
