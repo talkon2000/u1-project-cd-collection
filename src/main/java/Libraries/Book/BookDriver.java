@@ -1,23 +1,24 @@
 package Libraries.Book;
 
 import Libraries.Book.Types.Book;
-import Libraries.Book.Types.BookCollection;
+import Libraries.Book.Types.BookLibrary;
 
 import java.util.List;
 
 public class BookDriver {
 
-    public BookCollection getBookCollection(String filename) {
+    public BookLibrary getBookLibrary(String filename) {
         BookReader bookReader = new BookReader();
         List<Book> booksList = bookReader.getAllBooks(filename);
         if (booksList == null) {
             System.out.println("Exiting...");
             System.exit(0);
         }
-        BookCollection collection = new BookCollection();
+
+        BookLibrary library = new BookLibrary();
         for (Book book : booksList) {
-            collection.addBook(book);
+            library.addBook(book);
         }
-        return collection;
+        return library;
     }
 }
