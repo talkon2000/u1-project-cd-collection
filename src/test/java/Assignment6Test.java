@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class Assignment5Test {
+public class Assignment6Test {
 
     @Test
     void cd_addSong_addsSongToCd(){
@@ -19,19 +19,6 @@ public class Assignment5Test {
 
         //THEN
         assertTrue(cd.getSongs().contains(newSong), "Expected Sicko Mode to be included in the new CD!");
-    }
-
-    @Test
-    void cd_addSong_updatesNumOfSongs(){
-        //GIVEN
-        Song newSong = new Song("Mo Bamba", "3:33");
-        Cd cd = new Cd("Astroworld", "Travis Scott", 2018, 10, 2);
-
-        //WHEN
-        cd.addSong(newSong);
-
-        //THEN
-        assertEquals(3, cd.getNumOfSongs(), "Expected the new song to be added!");
     }
 
     @Test
